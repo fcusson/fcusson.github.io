@@ -1,0 +1,42 @@
+---
+---
+
+// === Override brand color ===
+$background-color: #111; // Optional: tweak base if needed
+$primary-color: #E22B00;
+$link-color: #E22B00;
+$accent-color: #E22B00;
+
+// Import the skin (if using one)
+@import "minimal-mistakes/skins/dark"; // or whatever skin you want
+
+// Import main theme styles
+@import "minimal-mistakes";
+
+.tagline {
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* Choose a clean font */
+  font-size: 0.8rem; /* Slightly smaller than the title */
+  line-height: 1.4;
+  font-weight: 500; /* Medium weight to make it less bold */
+  color: #E22B00; /* Your brand color for text */
+  text-align: center; /* Center the subtitle */
+  text-transform: none; /* Keep it lowercase or title case for style */
+
+  /* Optional: gradient or color shift on hover */
+  background: linear-gradient(to right, #E22B00, #FF7F00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* Subtle text shadow for depth */
+  text-shadow: 0 0 3px rgba(226, 43, 0, 0.7), 0 0 5px rgba(226, 43, 0, 0.5);
+
+  /* Optional hover effect */
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    text-shadow: 0 0 8px rgba(226, 43, 0, 1), 0 0 12px rgba(255, 127, 0, 0.8);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    color: #FF7F00; /* Light orange hover effect */
+  }
+
+}
