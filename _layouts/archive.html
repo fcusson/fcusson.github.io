@@ -2,7 +2,15 @@
 layout: default
 ---
 
-{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+<!-- Hero Section: Check if banner is provided -->
+{% if page.banner %}
+  <div class="banner">
+    <img src="{{ page.banner }}" alt="Banner Image" class="banner-image" />
+    <div class="banner-title">
+      <h1>{{ page.title }}</h1>
+    </div>
+  </div>
+{% elsif page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
 {% elsif page.header.video.id and page.header.video.provider %}
   {% include page__hero_video.html %}
@@ -18,9 +26,10 @@ layout: default
   {% include sidebar.html %}
 
   <div class="archive">
-    {% unless page.header.overlay_color or page.header.overlay_image %}
+    {% unless page.banner %}
       <h1 id="page-title" class="page__title"{% if page.locale %} lang="{{ page.locale }}"{% endif %}>{{ page.title }}</h1>
     {% endunless %}
     {{ content }}
   </div>
 </div>
+
